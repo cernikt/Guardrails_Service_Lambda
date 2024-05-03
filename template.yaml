@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Guardrails_Service_Lambda
+
+  Sample SAM Template for Guardrails_Service_Lambda
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 500
+    MemorySize: 500
+
+Resources:
+  CheckGuardrails:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: check_guardrails/
+      Handler: guardrails.check_guardrails
+      Runtime: python3.12
+      Environment:
+        Variables:
+          OPENAI_API_KEY: "sk-proj-gwlzlAakpbEkKq0DuY3cT3BlbkFJyunclb2kN2K02lCsbxMN"
+      Architectures:
+      - x86_64
