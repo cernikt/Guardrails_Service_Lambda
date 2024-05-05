@@ -20,6 +20,6 @@ Resources:
       Runtime: python3.12
       Environment:
         Variables:
-          OPENAI_API_KEY: "sk-proj-gwlzlAakpbEkKq0DuY3cT3BlbkFJyunclb2kN2K02lCsbxMN"
+          OPENAI_API_KEY: "your-api-key"
       Architectures:
       - x86_64
